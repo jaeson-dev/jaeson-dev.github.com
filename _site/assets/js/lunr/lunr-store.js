@@ -6,8 +6,26 @@ var store = [{
         "teaser": null
       },{
         "title": "Swift 공부 정리 목록 (1)",
-        "excerpt":"옵셔널 변수 및 unwrapping  구조체 종류(클래스, 스트럭트, enum)  제네릭  클로저(closure)   ","categories": [],
+        "excerpt":"옵셔널 변수 및 unwrapping  구조체 종류(클래스, 스트럭트, enum)  제네릭  클로저(closure)  Swift 언어의 특징  ","categories": [],
         "tags": [],
         "url": "/Swift-%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC-%EB%AA%A9%EB%A1%9D-(1)/",
+        "teaser": null
+      },{
+        "title": "Swift 공부 정리 목록 (2)",
+        "excerpt":" ","categories": [],
+        "tags": [],
+        "url": "/Swift-%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC-%EB%AA%A9%EB%A1%9D-(2)/",
+        "teaser": null
+      },{
+        "title": "optional 과 unwrapping",
+        "excerpt":"Swift 언어는 타입에 굉장히 업격하다. Swift내의 여러 개의 타입중 nil 이라는 타입이 존재한다. nil 이라는 타입은 값이 있을 수도 있고 없을 수도 있는 타입이다. nil 타입으로 선언된 변수안에 담긴 값을 Int 나 String 타입등 다른 타입으로 꺼내어 쓰고 싶을 때 오류가 발생한다. 이를 해결 하기 위해서는 nil로 감싸진 타입을 벗겨내야...","categories": ["Swift"],
+        "tags": ["optional","unwrapping","if let, if var, guard let, guard var"],
+        "url": "/swift/optional-binding/",
+        "teaser": null
+      },{
+        "title": "콜렉션 타입(Colletcion types)",
+        "excerpt":"Swift에는 위 그림과 같이 크게 세 가지의 콜렉션 타입을 갖는다. Array Array 타입은 구성 요소들이 각각 순서를 갖는다. 빈 배열은 다음과 같이 생성 할 수 있다. var myArray = Array&lt;String&gt;() var myArray = [String]() Set Set 타입은 구성 요소들이 순서를 따로 갖지 않는다. 빈 Set은 다음과 같이 생성 할 수...","categories": ["Swift"],
+        "tags": ["Array","Set","Dictionary"],
+        "url": "/swift/%EC%BD%9C%EB%A0%89%EC%85%98-%ED%83%80%EC%9E%85/",
         "teaser": null
       }]

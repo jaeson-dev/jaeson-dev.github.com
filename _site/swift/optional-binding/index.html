@@ -9,28 +9,32 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>꿈과 낭만을 품은 개발자</title>
-<meta name="description" content="An amazing website.">
+<!-- begin _includes/seo.html --><title>optional 과 unwrapping - 꿈과 낭만을 품은 개발자</title>
+<meta name="description" content="Swift 언어는 타입에 굉장히 업격하다. Swift내의 여러 개의 타입중 nil 이라는 타입이 존재한다.  nil 이라는 타입은 값이 있을 수도 있고 없을 수도 있는 타입이다.">
 
 
   <meta name="author" content="Jaesun Kim">
   
+  <meta property="article:author" content="Jaesun Kim">
+  
 
 
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="꿈과 낭만을 품은 개발자">
-<meta property="og:title" content="꿈과 낭만을 품은 개발자">
-<meta property="og:url" content="http://localhost:4000/">
+<meta property="og:title" content="optional 과 unwrapping">
+<meta property="og:url" content="http://localhost:4000/swift/optional-binding/">
 
 
-  <meta property="og:description" content="An amazing website.">
-
-
-
+  <meta property="og:description" content="Swift 언어는 타입에 굉장히 업격하다. Swift내의 여러 개의 타입중 nil 이라는 타입이 존재한다.  nil 이라는 타입은 값이 있을 수도 있고 없을 수도 있는 타입이다.">
 
 
 
+
+
+
+
+  <meta property="article:published_time" content="2022-02-12T00:00:00+09:00">
 
 
 
@@ -41,7 +45,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/">
+<link rel="canonical" href="http://localhost:4000/swift/optional-binding/">
 
 
 
@@ -92,7 +96,7 @@
 
   </head>
 
-  <body class="layout--home">
+  <body class="layout--single">
     <nav class="skip-links">
   <ul>
     <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
@@ -256,24 +260,151 @@
 
 
 
-  <div class="archive">
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="optional 과 unwrapping">
+    <meta itemprop="description" content="Swift 언어는 타입에 굉장히 업격하다. Swift내의 여러 개의 타입중 nil 이라는 타입이 존재한다. nil 이라는 타입은 값이 있을 수도 있고 없을 수도 있는 타입이다.">
+    <meta itemprop="datePublished" content="2022-02-12T00:00:00+09:00">
     
-      <h1 id="page-title" class="page__title"></h1>
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/swift/optional-binding/" class="u-url" itemprop="url">optional 과 unwrapping
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
     
+
     
 
-<h3 class="archive__subtitle">Recent posts</h3>
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
 
 
+        </header>
+      
 
+      <section class="page__content e-content" itemprop="text">
+        
+        <p>Swift 언어는 타입에 굉장히 업격하다. Swift내의 여러 개의 타입중 nil 이라는 타입이 존재한다. 
+nil 이라는 타입은 값이 있을 수도 있고 없을 수도 있는 타입이다.</p>
 
-<div class="entries-list">
+<p>nil 타입으로 선언된 변수안에 담긴 값을 Int 나 String 타입등 다른 타입으로 꺼내어 쓰고 싶을 때 오류가 발생한다. 이를 해결 하기 위해서는 nil로 감싸진 타입을 벗겨내야 하는데 이를 unwrapping 이라고 한다.</p>
+
+<p>unwrapping 하는 방법은 크게 두 가지로 나뉜다.</p>
+
+<p>첫 번째는 ‘!’ 키워드를 사용해 강제로 벗겨내는 것이다. ‘!’ 키워드를 nil 타입의 변수 앞에 붙여 쓰면 unwrapping이 되어 해당 변수 안의 값을 꺼낼 수가 있는데 이런 경우에는 한 가지 전제 조건이 붙는다. 바로 해당 타입이 비어있지 않을 거라는 조건이다. 타입에 엄격한 swift 언어 특성상 이와 같은 방식으로 unwrapping 하는 것은 위험할 수 있다.</p>
+
+<p>두 번째는 if let &amp; if var 또는 guard let &amp; guard var 를 사용하여 unwrapping하는 것인데 이를 Optional Binding 이라고 표현하기도 한다.</p>
+
+<p>if let 과 guard let 의 차이는 무엇일까?</p>
+
+<p>if let에서는 변수가 선언된 스코프 내부에서만 사용할 수 있고 else 블록이나 기타 해당 블록 밖에서는 사용 할 수 없다.</p>
+
+<p>guard let에서 선언된 변수는 else 블록 안에서는 사용할 수 없다. 그러나 guard let 이 정의된 함수블록등 안에서는 전역변수처럼 사용이 가능하다.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
   
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
     
+      <a href="/tags/#if-let-if-var-guard-let-guard-var" class="page__taxonomy-item p-category" rel="tag">if let, if var, guard let, guard var</a><span class="sep">, </span>
+    
+      <a href="/tags/#optional" class="page__taxonomy-item p-category" rel="tag">optional</a><span class="sep">, </span>
+    
+      <a href="/tags/#unwrapping" class="page__taxonomy-item p-category" rel="tag">unwrapping</a>
+    
+    </span>
+  </p>
 
 
 
-<div class="list__item">
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#swift" class="page__taxonomy-item p-category" rel="tag">Swift</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-02-12T00:00:00+09:00">February 12, 2022</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=optional+%EA%B3%BC+unwrapping%20http%3A%2F%2Flocalhost%3A4000%2Fswift%2Foptional-binding%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fswift%2Foptional-binding%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fswift%2Foptional-binding%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/Swift-%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC-%EB%AA%A9%EB%A1%9D-(2)/" class="pagination--pager" title="Swift 공부 정리 목록 (2)
+">Previous</a>
+    
+    
+      <a href="/swift/%EC%BD%9C%EB%A0%89%EC%85%98-%ED%83%80%EC%9E%85/" class="pagination--pager" title="콜렉션 타입(Colletcion types)
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">You may also enjoy</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
@@ -308,53 +439,12 @@
   </article>
 </div>
 
-  
-    
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/swift/optional-binding/" rel="permalink">optional 과 unwrapping
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
         
-          less than 1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">Swift 언어는 타입에 굉장히 업격하다. Swift내의 여러 개의 타입중 nil 이라는 타입이 존재한다. 
-nil 이라는 타입은 값이 있을 수도 있고 없을 수도 있는 타입이다.
-</p>
-  </article>
-</div>
-
-  
-    
+          
 
 
 
-<div class="list__item">
+<div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
@@ -389,12 +479,12 @@ nil 이라는 타입은 값이 있을 수도 있고 없을 수도 있는 타입�
   </article>
 </div>
 
-  
-    
+        
+          
 
 
 
-<div class="list__item">
+<div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
@@ -433,12 +523,12 @@ Swift 언어의 특징
   </article>
 </div>
 
-  
-    
+        
+          
 
 
 
-<div class="list__item">
+<div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
@@ -473,13 +563,11 @@ Swift 언어의 특징
   </article>
 </div>
 
+        
+      </div>
+    </div>
   
-</div>
-
-
-
-
-  </div>
+  
 </div>
     </div>
 

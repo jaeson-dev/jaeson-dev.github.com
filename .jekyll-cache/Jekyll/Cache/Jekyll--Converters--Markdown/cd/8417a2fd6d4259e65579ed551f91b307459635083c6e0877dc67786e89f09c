@@ -1,0 +1,17 @@
+I"I<h2><img src="https://docs.swift.org/swift-book/_images/CollectionTypes_intro_2x.png" alt="" title="출처: https://docs.swift.org/swift-book/LanguageGuide/CollectionTypes.html" /></h2>
+
+<p>Swift에는 위 그림과 같이 크게 세 가지의 콜렉션 타입을 갖는다.</p>
+<ol>
+  <li>Array
+    <ul>
+      <li>Array 타입은 구성 요소들이 각각 순서를 갖는다.</li>
+      <li>빈 배열은 다음과 같이 생성할 수 있다.
+        <ul>
+          <li>₩₩₩var names = Array<String>()₩₩₩</String></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+:ET
