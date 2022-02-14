@@ -1,5 +1,5 @@
 ---
-title: "콜렉션 타입(Colletcion types)"
+title: "콜렉션 타입(Colletcion types)123"
 categories:
     - Swift
 tags:
