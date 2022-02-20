@@ -28,4 +28,22 @@ var store = [{
         "tags": ["Array","Set","Dictionary"],
         "url": "/swift/%EC%BD%9C%EB%A0%89%EC%85%98-%ED%83%80%EC%9E%85/",
         "teaser": null
+      },{
+        "title": "열거형(enum)",
+        "excerpt":" ","categories": [],
+        "tags": [],
+        "url": "/%EC%97%B4%EA%B1%B0%ED%98%95(enum)/",
+        "teaser": null
+      },{
+        "title": "클래스와 구조체(classes and structures)",
+        "excerpt":"Struct 와 Class 프로그램 코드를 구조화 하기 위해 쓰임. Class와 Struct의 공통점 값을 저장하기 위해 properties를 정의 할 수 있다. 기능 제공을 위한 method를 정의 할 수 있다. .을 이용하여 내부의 property와 method에 접근 할 수 있다. 초기 상태를 set up 할 수 있는 initializers를 정의한다. Class만의 특징은 다음과 같다....","categories": [],
+        "tags": [],
+        "url": "/%ED%81%B4%EB%9E%98%EC%8A%A4%EC%99%80-%EA%B5%AC%EC%A1%B0%EC%B2%B4(Classes-and-Structures)/",
+        "teaser": null
+      },{
+        "title": "Uikit vs swiftui",
+        "excerpt":" ","categories": [],
+        "tags": [],
+        "url": "/UIKit-vs-SwiftUI/",
+        "teaser": null
       }]
