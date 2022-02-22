@@ -1,0 +1,71 @@
+I"�!
+<h2 id="클로저closures">클로저(Closures)</h2>
+
+<p>Closure(클로저)는 코드블록으로 어떤 상수나 참조를 저장하고 캡쳐 할 수 있다.<br />
+클로저는 다음 세 가지 형태로 표현될 수 있다.</p>
+<ul>
+  <li>이름이 있고 어떠한 값도 캡쳐하지 않는 전역 함수</li>
+  <li>이름이 있고 그것을 포함하는 enclosing함수 값들을 캡쳐하는 중첩함수</li>
+  <li>클로저 표현식은 주변 문맥(Context)로부터 값을 캡쳐할 수 있는 경량화된 문법으로 적힌 이름없는 클로져다.</li>
+</ul>
+
+<hr />
+
+<p>Swift의 closure 표현식은 깔끔하고 간결하고 명확하다. 이를 위해 다음과 같은 기능이 있다.</p>
+<ul>
+  <li>문맥에서 인자타입(parameter) 및 반환 타입(return type)의 추론이 가능하다.</li>
+  <li>단일 표현 클로저에서의 암시적 변환</li>
+  <li>인자 이름을 축약할 수 있다.</li>
+  <li>Trailing closure syntax (후위 클로저 문법)</li>
+</ul>
+
+<hr />
+
+<p>기본적인 클로져의 표현식은 다음과 같다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span> <span class="p">(</span><span class="o">&lt;</span><span class="err">#</span><span class="n">parameters</span><span class="err">#</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="o">&lt;</span><span class="err">#</span><span class="k">return</span> <span class="n">type</span><span class="err">#</span><span class="o">&gt;</span> <span class="k">in</span>
+    <span class="o">&lt;</span><span class="err">#</span><span class="n">statements</span><span class="err">#</span><span class="o">&gt;</span>
+<span class="p">}</span>
+
+
+<span class="k">var</span> <span class="nv">closure1</span> <span class="o">=</span> <span class="p">{(</span><span class="nv">number</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="k">in</span>
+    <span class="k">return</span> <span class="s">"당신의 점수는 </span><span class="se">\(</span><span class="n">number</span><span class="se">)</span><span class="s">점입니다."</span>
+<span class="p">}</span>
+
+<span class="nf">closure1</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1">// 당신의 점수는 1점입니다.</span>
+
+</code></pre></div></div>
+<p>클로져의 단순함과 간략함을 볼 수 있는 가장 쉬운 예제는 배열 값을 정렬하는 메소드일 것이다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">names</span> <span class="o">=</span> <span class="p">[</span><span class="s">"Chiris"</span><span class="p">,</span> <span class="s">"Alex"</span><span class="p">,</span> <span class="s">"Ewa"</span><span class="p">,</span> <span class="s">"Barry"</span><span class="p">,</span> <span class="s">"Daniella"</span><span class="p">]</span>
+
+<span class="kd">func</span> <span class="nf">backward</span><span class="p">(</span><span class="n">_</span> <span class="nv">s1</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">_</span> <span class="nv">s2</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">s1</span> <span class="o">&gt;</span> <span class="n">s2</span>
+<span class="p">}</span>
+
+<span class="k">var</span> <span class="nv">resersedNames</span> <span class="o">=</span> <span class="n">names</span><span class="o">.</span><span class="nf">sorted</span><span class="p">(</span><span class="nv">by</span><span class="p">:</span> <span class="n">backward</span><span class="p">)</span>
+</code></pre></div></div>
+<p>backward라는 함수를 만들어 sorted라는 메소드에 인자로 넣어줬다. 함수를 정의하고 이를 다시 인자로 넣어주고… 꽤나 길고 복잡한 이 코드를 간략하게 줄여보자<br /></p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">reversedNames</span> <span class="o">=</span> <span class="n">names</span><span class="o">.</span><span class="n">sorted</span> <span class="p">{</span> <span class="p">(</span><span class="nv">s1</span> <span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">s2</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="k">in</span>
+    <span class="k">return</span> <span class="n">s1</span> <span class="o">&gt;</span> <span class="n">s2</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>클로져내의 body가 한 줄로 끝난다면 다음과 같이 또 줄일 수 있다.</p>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">reversedNames2</span> <span class="o">=</span> <span class="n">names</span><span class="o">.</span><span class="nf">sorted</span><span class="p">(</span><span class="nv">by</span><span class="p">:</span> <span class="p">{(</span><span class="nv">s1</span> <span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">s2</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="k">in</span> <span class="k">return</span> <span class="n">s1</span> <span class="o">&gt;</span> <span class="n">s2</span><span class="p">})</span>
+</code></pre></div></div>
+<p>문맥에서 타입 추론이 가능하기에 이와같이 또 줄일 수 있다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">reversedNames3</span> <span class="o">=</span> <span class="n">names</span><span class="o">.</span><span class="nf">sorted</span><span class="p">(</span><span class="nv">by</span><span class="p">:</span> <span class="p">{</span> <span class="n">s1</span><span class="p">,</span> <span class="n">s2</span> <span class="k">in</span> <span class="k">return</span> <span class="n">s1</span> <span class="o">&gt;</span> <span class="n">s2</span> <span class="p">})</span>
+<span class="k">var</span> <span class="nv">reversedNames4</span> <span class="o">=</span> <span class="n">names</span><span class="o">.</span><span class="nf">sorted</span><span class="p">(</span><span class="nv">by</span><span class="p">:</span> <span class="p">{</span> <span class="n">s1</span><span class="p">,</span> <span class="n">s2</span> <span class="k">in</span> <span class="n">s1</span> <span class="o">&gt;</span> <span class="n">s2</span> <span class="p">})</span>
+</code></pre></div></div>
+<p>Swift에서는 인라인 클로저에 자동으로 축약 인자 이름을 제공한다. $0, $1, … 등으로 사용할 수 있다.<br />
+축약 인자 이름을 사용하면 인자 값과 그 인자로 처리할 때 사용하는 인자가 같다는 것을 알기에 in 키워드를 생략할 수 있다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">reversedNames5</span> <span class="o">=</span> <span class="n">names</span><span class="o">.</span><span class="nf">sorted</span><span class="p">(</span><span class="nv">by</span><span class="p">:</span> <span class="p">{</span><span class="nv">$0</span> <span class="o">&gt;</span> <span class="nv">$1</span><span class="p">})</span>
+</code></pre></div></div>
+<p>여기서 더 줄일 수 있다. Swift는 String 타입끼리 비교할 수 있는 연산자가 있다.(&gt;,&lt;). 이 때문에 이 연산자를 사용하면</p>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">reversedNames5</span> <span class="o">=</span> <span class="n">names</span><span class="o">.</span><span class="nf">sorted</span><span class="p">(</span><span class="nv">by</span><span class="p">:</span><span class="o">&gt;</span><span class="p">)</span>
+</code></pre></div></div>
+<p>정말 드라마틱하게 줄었다!</p>
+:ET

@@ -46,4 +46,16 @@ var store = [{
         "tags": [],
         "url": "/UIKit-vs-SwiftUI/",
         "teaser": null
+      },{
+        "title": "Swiftui에 대해서",
+        "excerpt":" ","categories": [],
+        "tags": [],
+        "url": "/SwiftUI%EC%97%90-%EB%8C%80%ED%95%B4%EC%84%9C/",
+        "teaser": null
+      },{
+        "title": "클로저(Closures) #1",
+        "excerpt":"클로저(Closures) Closure(클로저)는 코드블록으로 어떤 상수나 참조를 저장하고 캡쳐 할 수 있다. 클로저는 다음 세 가지 형태로 표현될 수 있다. 이름이 있고 어떠한 값도 캡쳐하지 않는 전역 함수 이름이 있고 그것을 포함하는 enclosing함수 값들을 캡쳐하는 중첩함수 클로저 표현식은 주변 문맥(Context)로부터 값을 캡쳐할 수 있는 경량화된 문법으로 적힌 이름없는 클로져다. Swift의 closure...","categories": ["Swift"],
+        "tags": ["closure"],
+        "url": "/swift/%ED%81%B4%EB%A1%9C%EC%A0%80(Closure)/",
+        "teaser": null
       }]
