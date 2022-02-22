@@ -1,0 +1,10 @@
+<p>이어서 클로저의 특성중 Trailing Closures를 알아보자. <br />
+만약 함수의 마지막 인자로 클로저를 넣고 그 클로저가 길다면 trailing closures를 사용할 수 있다.<br /></p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">reversedNames</span> <span class="o">=</span> <span class="n">names</span><span class="o">.</span><span class="nf">sorted</span><span class="p">(</span><span class="nv">by</span><span class="p">:</span> <span class="p">{</span><span class="nv">$0</span> <span class="o">&gt;</span> <span class="nv">$1</span><span class="p">})</span>
+
+<span class="k">var</span> <span class="nv">reversedNamesTrailing</span> <span class="o">=</span> <span class="n">names</span><span class="o">.</span><span class="nf">sorted</span><span class="p">(){</span> <span class="nv">$0</span> <span class="o">&gt;</span> <span class="nv">$1</span> <span class="p">}</span>
+
+<span class="c1">// 만약 함수의 마지막 인자가 클로저라면 괄호 () 를 생략할 수 있다.</span>
+<span class="k">var</span> <span class="nv">reversedNamesTrailing</span> <span class="o">=</span> <span class="n">names</span><span class="o">.</span><span class="n">sorted</span><span class="p">{</span> <span class="nv">$0</span> <span class="o">&gt;</span> <span class="nv">$1</span> <span class="p">}</span>
+</code></pre></div></div>
