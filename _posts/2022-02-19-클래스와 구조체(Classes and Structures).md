@@ -1,5 +1,13 @@
-
-## Struct 와 Class
+---
+title: "Classes and Structs"
+categories:
+    - Swift
+tags:
+    - class
+    - struct
+    
+---
+## Class와 Struct
 
 프로그램 코드를 구조화 하기 위해 쓰임. 
 
